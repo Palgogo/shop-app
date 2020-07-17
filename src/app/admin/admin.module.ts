@@ -1,3 +1,4 @@
+import { AuthGuard } from './../shared/auth.guard';
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -28,10 +29,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
                 path: '', component: AdminLayoutComponent, children: [
                     {path: '', redirectTo: '/admin/login', pathMatch: 'full'},
                     {path: 'login', component: LoginPageComponent},
-                    {path: 'dashboard', component: DashboardPageComponent},
-                    {path: 'add', component: AddPageComponent},
-                    {path: 'orders', component: OrdersPageComponent},
-                    {path: 'product/:id/edit', component: EditPageComponent},
+                    {path: 'dashboard', component: DashboardPageComponent, canActivate: [AuthGuard]},
+                    {path: 'add', component: AddPageComponent, canActivate: [AuthGuard]},
+                    {path: 'orders', component: OrdersPageComponent, canActivate: [AuthGuard]},
+                    {path: 'product/:id/edit', component: EditPageComponent, canActivate: [AuthGuard]},
                 ]
             }
         ])
