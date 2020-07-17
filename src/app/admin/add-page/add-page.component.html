@@ -1,10 +1,15 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
 
-    <h2>Login as administrator</h2>
+    <h2 class="text-center">Add product</h2>
 
     <div class="form-control">
         <label for="type">Type</label>
-        <input id="type" type="type" formControlName="type">
+        
+        <select formControlName="type">
+            <option value="Phone">Phone</option>
+            <option value="Tablet">Tablet</option>
+            <option value="Laptop">Laptop</option>
+        </select>
         <div *ngIf="form.get('type').touched && form.get('type').invalid" class="validation">
             <small *ngIf="form.get('type').errors.required">choose product type</small>
         </div>
@@ -18,11 +23,11 @@
     </div>
     <div class="form-control">
         <label for="photo">Photo:</label>
-        
+        <quill-editor formControlName="photo"></quill-editor>
     </div>
     <div class="form-control">
         <label for="info">Information</label>
-       
+        <quill-editor formControlName="info"></quill-editor>
     </div>
     <div class="form-control">
         <label for="price">price</label>
@@ -33,7 +38,7 @@
     </div>
 
 
-    <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid || submitted">Logon</button>
+    <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid || submitted">Add</button>
     
 
 </form>
