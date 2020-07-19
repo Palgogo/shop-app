@@ -1,5 +1,4 @@
 <div *ngIf="products$ | async as products">
-<div *ngFor="let product of products">
-    {{product.title}}
-</div>
+<app-product *ngFor="let product of products">
+</app-product>
 </div>
