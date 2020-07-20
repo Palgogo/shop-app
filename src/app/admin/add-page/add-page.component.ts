@@ -34,14 +34,14 @@ export class AddPageComponent implements OnInit {
 
     this.submitted = true
 
-    const product ={
+    const product = {
       type: this.form.value.type,
       title: this.form.value.title,
       photo: this.form.value.photo,
       info: this.form.value.info,
       price: this.form.value.price,
       date: new Date(),
-    }
+    };
 
     (this.form)
     this.productService.create(product).subscribe(res =>{
