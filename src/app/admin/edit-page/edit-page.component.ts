@@ -44,7 +44,6 @@ export class EditPageComponent implements OnInit {
     }
 
 
-    console.log(this.form)
     this.productService.update({
       ...this.product,
       type: this.form.value.type,

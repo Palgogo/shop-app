@@ -53,7 +53,6 @@ export class CartPageComponent implements OnInit {
       date: new Date(),
     }
 
-    console.log(this.form)
     this.orderService.create(order).subscribe(res =>{
       this.submitted = false
       this.form.reset()

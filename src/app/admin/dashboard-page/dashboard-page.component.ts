@@ -20,7 +20,6 @@ export class DashboardPageComponent implements OnInit {
 
   ngOnInit() {
    this.productSub = this.productService.getAll().subscribe(products => {
-     console.log(products)
       this.products = products
     })
   }
