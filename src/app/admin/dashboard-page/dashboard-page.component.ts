@@ -10,8 +10,10 @@ import { Subscription } from 'rxjs';
 export class DashboardPageComponent implements OnInit {
 
   products = []
+  productName
   productSub: Subscription
   removeSub: Subscription
+
   constructor(
     private productService : ProductService
   ) { }

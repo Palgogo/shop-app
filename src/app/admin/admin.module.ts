@@ -1,3 +1,4 @@
+import { SearchPipe } from './../shared/search.pipe';
 import { AuthGuard } from './../shared/auth.guard';
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
@@ -19,6 +20,7 @@ import { QuillModule } from 'ngx-quill';
         AddPageComponent,
         EditPageComponent,
         OrdersPageComponent,
+        SearchPipe,
 
     ],
     imports:[
