@@ -1,3 +1,4 @@
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthInterceptor } from './shared/auth.interceptor';
 import { QuillModule } from 'ngx-quill';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,6 +28,8 @@ import { SortingPipe } from './shared/sorting.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     QuillModule.forRoot(),
   ],
   providers: [{

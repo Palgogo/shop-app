@@ -11,7 +11,7 @@ import { ObjectUnsubscribedError } from 'rxjs';
 export class ProductService {
 
   type = 'Phone'
-  cartProducts: Product[]
+  cartProducts: Product[] = []
 
   constructor(private http: HttpClient ) { }
 

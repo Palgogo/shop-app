@@ -13,7 +13,7 @@ export class ProductPageComponent implements OnInit {
 
   product$
   constructor(
-    private productService: ProductService,
+    public productService: ProductService,
     private route: ActivatedRoute
   ) { }
 
@@ -24,6 +24,10 @@ export class ProductPageComponent implements OnInit {
         return this.productService.getById(params['id'])
       })
     )
+  }
+
+  addProduct(product){
+    this.productService.addProduct(product)
   }
 
 }
