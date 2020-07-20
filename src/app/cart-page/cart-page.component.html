@@ -7,7 +7,7 @@
                 <td>{{cartProduct.type}}</td>
                 <td>{{cartProduct.title}}</td>
                 <td>
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-danger" (click)="delete(cartProduct)">Delete</button>
                 </td>
                 <td>{{cartProduct.price}}</td>
             </tr>
@@ -17,6 +17,8 @@
     <b class="right">Total: {{totalPrice}} $</b>
 
     <h2 class="text-center">Delivery:</h2>
+
+    <div class="text-center" *ngIf="added">{{added}}</div>
 
     <form [formGroup]="form" (ngSubmit)="submit()">
 
