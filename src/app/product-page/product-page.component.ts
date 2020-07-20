@@ -12,8 +12,6 @@ import { switchMap } from 'rxjs/operators';
 export class ProductPageComponent implements OnInit {
 
   product$
-  loading = false
-
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute
