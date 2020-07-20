@@ -11,7 +11,7 @@ import { switchMap } from 'rxjs/operators';
 })
 export class ProductPageComponent implements OnInit {
 
-  @Input() product$
+  product$
   loading = false
 
   constructor(
