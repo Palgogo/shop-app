@@ -1,4 +1,6 @@
+import { ProductService } from './../../shared/product.service';
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPageComponent implements OnInit {
 
-  constructor() { }
+  products = []
+  productSub: Subscription
+  constructor(
+    private productService : ProductService
+  ) { }
 
   ngOnInit() {
+   this.productSub = this.productService.getAll().subscribe(products => {
+     console.log(products)
+      this.products = products
+    })
+  }
+
+  ngOnDestroy(){
+    if (this.productSub) {
+      this.productSub.unsubscribe()
+    }
   }
 
 }
