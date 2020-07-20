@@ -19,7 +19,7 @@
                 <td>{{product.price}}</td>
                 <td>{{product.date}}</td>
                 <td>
-                    <button class="btn btn-dark" [routerLink]="['/admin','product','product.id','edit']">Open</button>
+                    <button class="btn btn-dark" [routerLink]="['/admin','product',product.id,'edit']">Open</button>
                 </td>
                 <td>
                     <button class="btn btn-danger" (click)="remove(product.id)">Delete</button>
