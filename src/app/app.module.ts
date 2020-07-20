@@ -11,6 +11,7 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProductComponent } from './product/product.component';
+import { SortingPipe } from './shared/sorting.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ProductComponent } from './product/product.component';
     ProductPageComponent,
     CartPageComponent,
     ProductComponent,
+    SortingPipe,
   ],
   imports: [
     BrowserModule,
