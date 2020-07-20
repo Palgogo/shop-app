@@ -11,6 +11,7 @@ export class DashboardPageComponent implements OnInit {
 
   products = []
   productSub: Subscription
+  removeSub: Subscription
   constructor(
     private productService : ProductService
   ) { }
@@ -26,6 +27,16 @@ export class DashboardPageComponent implements OnInit {
     if (this.productSub) {
       this.productSub.unsubscribe()
     }
+    if (this.removeSub) {
+      this.removeSub.unsubscribe()
+    }
+  }
+
+  remove(id){
+    this.removeSub = this.productService.remove(id)
+    .subscribe( () => {
+      this.products = this.products.filter(product => product.id !== id)
+    })
   }
 
 }
